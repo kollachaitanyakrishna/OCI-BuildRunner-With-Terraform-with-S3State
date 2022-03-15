@@ -7,7 +7,7 @@ resource "oci_identity_compartment" "tf-compartment" {
     # Required
     compartment_id = "ocid1.compartment.oc1..aaaaaaaas5a4ed5wdptp7qqprg7uzxolkcjmlj2agz2mmmzxbsse3vds6sja"
     description = "Compartment for Terraform resources."
-    name = "development"
+    name = "development-tf"
 }
 
 # Outputs for compartment
