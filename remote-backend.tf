@@ -1,9 +1,9 @@
 terraform {
   backend "s3" {
-    bucket   = "terraform-backend"
+    bucket   = "bucket-terraform-state"
     key      = "demo/terraform.tfstate"
-    region   = "us-ashburn-1"
-    endpoint = "https://fahdabidiroottenancy.compat.objectstorage.us-ashburn-1.oraclecloud.com"
+    region   = "ap-mumbai-1"
+    endpoint = "https://orasenatdpltintegration01.compat.objectstorage.ap-mumbai-1.oraclecloud.com"
     shared_credentials_file     = "./cred_store"
     skip_region_validation      = true
     skip_credentials_validation = true
