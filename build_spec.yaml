@@ -36,12 +36,16 @@ steps:
       
             
   - type: Command
+    name: "Terraform Action to INIT"
+    command: |
+      cd ${OCI_PRIMARY_SOURCE_DIR}
+      export OCI_AUTH=InstancePrincipal
+      terraform init -migrate-state
+    
+  - type: Command
     name: "Terraform Action"
     command: |
       cd ${OCI_PRIMARY_SOURCE_DIR}
-      unset OCI_AUTH
-      export OCI_AUTH=InstancePrincipal
-      terraform init -migrate-state
       terraform plan 
       terraform validate -no-color
       terraform apply -auto-approve -no-color
