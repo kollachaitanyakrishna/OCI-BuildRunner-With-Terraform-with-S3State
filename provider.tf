@@ -5,7 +5,6 @@ terraform {
       source  = "hashicorp/oci"
       
     }
-    
     random = {
       source  = "hashicorp/random"
       version = "2.3.0" # Latest version as March 2021 = 3.1.0. Using 2.3.0 (July, 2020) for ORM compatibility
@@ -14,10 +13,17 @@ terraform {
 }
 
 provider "oci" {
-  tenancy_ocid     = var.tenancy_ocid
-  alias        = "home_region"
-  region = "${var.region}"
-  auth = "InstancePrincipal"
+  tenancy_ocid    = var.tenancy_ocid
+  alias           = "home"
+  region          = "${var.region}"
+  auth            = "InstancePrincipal"
+   
+}
+
+provider "oci" {
+  tenancy_ocid   = var.tenancy_ocid
+  region         = "ap-mumbai-1"
+  auth           = "InstancePrincipal"
    
 }
 
